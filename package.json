@@ -1,0 +1,23 @@
+{
+  "name": "webpack-316",
+  "version": "1.0.0",
+  "description": "webpack",
+  "private": true,
+  "scripts": {
+    "bundle": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tammyDing/webpack-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tammyDing/webpack-demo/issues"
+  },
+  "homepage": "https://github.com/tammyDing/webpack-demo#readme",
+  "devDependencies": {
+    "file-loader": "^3.0.1"
+  }
+}
