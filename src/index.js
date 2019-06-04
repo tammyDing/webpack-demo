@@ -1,11 +1,10 @@
-const Header = require('./header')
-const Sidebar = require('./sidebar')
-const Content = require('./content')
+import avatar from './record-btn.png'
+import './index.css'
 
-const avatar = require('./record-btn.png')
+let img = new Image()
+img.src = avatar
+img.classList.add('avatar')
 
-console.log('avatar:', avatar)
+let root = document.getElementById('root')
 
-new Header()
-new Sidebar()
-new Content()
+root.append(img)

@@ -11,7 +11,18 @@ module.exports = {
         rules: [
             {
                 test: /\.jpe?g|png|gif|ico$/,
-                loader: 'file-loader'
+                use: {
+                    loader: 'url-loader',
+                    options: { // placeholder => 占位符
+                        name: '[name].[ext]',
+                        outputPath: 'images/', // 打包到的目录
+                        limit: 2048 // 图片超过了2048个字节的话就打包到dist目录下，小于2KB的话就打包成base64字符串形式
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
     }
