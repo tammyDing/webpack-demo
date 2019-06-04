@@ -1,5 +1,5 @@
 import avatar from './record-btn.png'
-import './index.css'
+import './index.scss'
 
 let img = new Image()
 img.src = avatar

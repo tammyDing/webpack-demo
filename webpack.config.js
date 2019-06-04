@@ -21,8 +21,18 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                test: /\.s?css$/,
+                use: [ // 从下到上从右到左的执行顺序
+                    'style-loader', 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2 // 配置项使@import也走sass-loader和postcss-loader
+                        }
+                    },
+                    'sass-loader',
+                    'postcss-loader'
+                ]
             }
         ]
     }
