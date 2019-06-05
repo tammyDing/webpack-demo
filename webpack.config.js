@@ -28,13 +28,19 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 2, // 配置项使@import也走sass-loader和postcss-loader
-                            modules: true
+                            // modules: true // 模块化css
                         }
                     },
                     'sass-loader',
                     'postcss-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(eot|ttf|ttf2|svg|woff)$/,
+                use: {
+                    loader: 'file-loader'
+                }
+            },
         ]
     }
 }
