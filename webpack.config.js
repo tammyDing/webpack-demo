@@ -27,7 +27,8 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 2 // 配置项使@import也走sass-loader和postcss-loader
+                            importLoaders: 2, // 配置项使@import也走sass-loader和postcss-loader
+                            modules: true
                         }
                     },
                     'sass-loader',
