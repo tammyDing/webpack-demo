@@ -1,11 +1,15 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin') // html打包
+const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 清除dist目录
 
 module.exports = {
     mode: 'production',
-    entry: './src/index.js', // 项目打包的入口文件
+    entry: {
+        main: './src/index.js', // 项目打包的入口文件
+    },
     output: {
         path: path.resolve(__dirname, 'dist'), // 打包出来的文件存放目录
-        filename: 'bundle.js' // 打包出来的js
+        filename: '[name].js' // 打包出来的js
     },
     module: {
         rules: [
@@ -42,5 +46,12 @@ module.exports = {
                 }
             },
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
+        }),
+        new CleanWebpackPlugin(),
+    ]
 }
